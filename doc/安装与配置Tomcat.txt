@@ -1,0 +1,42 @@
+#STEP 1：下载Tomcat安装包
+官方下载网页链接：http://tomcat.apache.org/download-70.cgi
+Core：tar.gz
+注意选择镜像地址
+
+Root权限下进行以下步骤
+#STEP 2：安装Tomcat
+##1、解压压缩包
+	tar - zxvf apache-tomcat-7.0.14.tar.gz
+##2、将文件放到指定目录
+cp -r apache-tomcat-7.0.53 /usr/local/
+
+'''
+#3、配置环境变量
+#	Vim /etc/profile
+#	最下方加入
+#CATALINA_HOME=/usr/local/apache-tomcat-7.0.53
+#export CATALINA_HOME
+#
+###4、修改/usr/local/apache-tomcat-7.0.53/bin/catalina.sh
+#找到：# OS specific support. $var _must_ be set to either true or false.
+#　　在这行上面再定义一次CATALINA_HOME以及JAVA_HOME：
+#CATALINA_HOME=/usr/local/apache-tomcat-7.0.53
+#JAVA_HOME=/usr/lib/jvm/jdk1.6.0_45
+'''
+
+#STEP 3：启动Tomcat
+/usr/local/apache-tomcat-7.0.53/bin/startup.sh
+Using CATALINA_BASE:   /usr/local/apache-tomcat-7.0.53
+Using CATALINA_HOME:   /usr/local/apache-tomcat-7.0.53
+Using CATALINA_TMPDIR: /usr/local/apache-tomcat-7.0.53/temp
+Using JRE_HOME:        /usr/lib/jvm/jdk1.6.0_45
+Using CLASSPATH:       /usr/local/apache-tomcat-7.0.53/bin/bootstrap.jar:/usr/local/apache-tomcat-7.0.53/bin/tomcat-juli.jar
+Tomcat started.
+
+#STEP 4：测试Tomcat
+在浏览器中输入：http://localhost:8080/ ，出现如下界面，说明安装成功。
+
+<img src="./安装与配置Tomcat/t1.png">
+
+参考网址
+http://www.33lc.com/article/7459.html

@@ -1,0 +1,11 @@
+ExcuteTestScript.jsp
+会根据不同的testcase执行不同的测试脚本。
+其中testcase2是用于指令频度统计统计的的脚本。
+
+
+
+response.sendRedirect("http://124.16.141.184:8080/mym_test/"+dirname);
+返回的结果会根据用户上传的测试用例的文件名形成对应的URL
+
+
+tomcat显示目录列表的功能。

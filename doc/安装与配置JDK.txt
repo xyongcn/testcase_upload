@@ -1,0 +1,49 @@
+﻿#STEP 1：下载JDK6安装包
+Oracle公司的官方下载网页链接：http://www.oracle.com/technetwork/java/javase/downloads/index.html或
+http://www.oracle.com/technetwork/java/javase/archive-139210.html
+下载Java SE 6 Update 45，是一个jdk-6u45-linux-i586.bin格式文件，大约68MB。
+
+Root权限下进行以下步骤
+#STEP 2：安装JDK6
+1、为jdk-6u45-linux-i586.bin增加执行权限
+    chmod u+x jdk-6u45-linux-i586.bin
+
+2、执行jdk-6u45-linux-i586.bin，将JDK6的相关文件解包至jdk1.6.0_45目录下
+    ./jdk-6u45-linux-i586.bin
+
+3、将jdk1.6.0_45复制到/usr/lib下
+    mkdir -p /usr/lib/jvm/
+    cp -r jdk1.6.0_45 /usr/lib/jvm/jdk1.6.0_45
+
+
+
+
+
+#STEP 3：配置环境变量
+$ sudo vim /etc/environment 
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/lib/jvm/jdk1.6.0_45/bin"
+CLASSPATH="/usr/lib/jvm/usr/lib/jvm/jdk1.6.0_45/lib"
+JAVA_HOME="/usr/lib/jvm/usr/lib/jvm/jdk1.6.0_45"
+
+执行
+source /etc/environment
+
+5、测试
+执行java -version可以看到当前JDK的版本信息，表示安装成功。显示如下：
+java version "1.6.0_45"
+Java(TM) SE Runtime Environment (build 1.6.0_45-b06)
+Java HotSpot(TM) Server VM (build 20.45-b01, mixed mode)
+
+
+
+6、安装JDK6
+update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk1.6.0_45/bin/javac 300
+update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.6.0_45/bin/java 300
+update-alternatives --config javac
+update-alternatives --config java
+若系统中未默认安装OpenJDK则提示：链接组 javac 中只有一个候选项：/usr/lib/jvm/jdk1.6.0_45/bin/javac无需配置。
+
+
+参考网址
+http://www.linuxidc.com/Linux/2012-08/68296.htm
+http://www.cnblogs.com/BreakMind/archive/2012/02/03/2336674.html
