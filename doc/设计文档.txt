@@ -1,11 +1,25 @@
 ExcuteTestScript.jsp
-»á¸ù¾İ²»Í¬µÄtestcaseÖ´ĞĞ²»Í¬µÄ²âÊÔ½Å±¾¡£
-ÆäÖĞtestcase2ÊÇÓÃÓÚÖ¸ÁîÆµ¶ÈÍ³¼ÆÍ³¼ÆµÄµÄ½Å±¾¡£
+ä¼šæ ¹æ®ä¸åŒçš„testcaseæ‰§è¡Œä¸åŒçš„æµ‹è¯•è„šæœ¬ã€‚
+å…¶ä¸­testcase2æ˜¯ç”¨äºæŒ‡ä»¤é¢‘åº¦ç»Ÿè®¡ç»Ÿè®¡çš„çš„è„šæœ¬ã€‚
 
 
 
 response.sendRedirect("http://124.16.141.184:8080/mym_test/"+dirname);
-·µ»ØµÄ½á¹û»á¸ù¾İÓÃ»§ÉÏ´«µÄ²âÊÔÓÃÀıµÄÎÄ¼şÃûĞÎ³É¶ÔÓ¦µÄURL
+è¿”å›çš„ç»“æœä¼šæ ¹æ®ç”¨æˆ·ä¸Šä¼ çš„æµ‹è¯•ç”¨ä¾‹çš„æ–‡ä»¶åå½¢æˆå¯¹åº”çš„URL
 
 
-tomcatÏÔÊ¾Ä¿Â¼ÁĞ±íµÄ¹¦ÄÜ¡£
+tomcatæ˜¾ç¤ºç›®å½•åˆ—è¡¨çš„åŠŸèƒ½ã€‚
+apache-tomcat-7.0.56/conf/web.xmlæ–‡ä»¶ä¸­
+
+    <servlet>
+        <servlet-name>default</servlet-name>
+        <servlet-class>org.apache.catalina.servlets.DefaultServlet</servlet-class>
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>0</param-value>
+        </init-param>
+        <init-param>
+            <param-name>listings</param-name>
+            <param-value>true</param-value>  #è¿™é‡Œé»˜è®¤æ˜¯falseï¼Œæ”¹ä¸ºtrueå°±å¯ä»¥å®ç°
+        </init-param>
+        <load-on-startup>1</load-on-startup>
