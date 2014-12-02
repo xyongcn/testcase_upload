@@ -1,7 +1,7 @@
-tomcatÏÔÊ¾Ä¿Â¼ÁĞ±íµÄ¹¦ÄÜ¡£
+ï»¿tomcatæ˜¾ç¤ºç›®å½•åˆ—è¡¨çš„åŠŸèƒ½ã€‚
 
 
-ĞŞ¸Äapache-tomcat-7.0.56/conf/web.xmlÎÄ¼ş
+ä¿®æ”¹apache-tomcat-7.0.56/conf/web.xmlæ–‡ä»¶
 
     <servlet>
         <servlet-name>default</servlet-name>
@@ -12,6 +12,6 @@ tomcatÏÔÊ¾Ä¿Â¼ÁĞ±íµÄ¹¦ÄÜ¡£
         </init-param>
         <init-param>
             <param-name>listings</param-name>
-            <param-value>true</param-value>  #ÕâÀïÄ¬ÈÏÊÇfalse£¬¸ÄÎªtrue¾Í¿ÉÒÔÊµÏÖ
+            <param-value>true</param-value>  #è¿™é‡Œé»˜è®¤æ˜¯falseï¼Œæ”¹ä¸ºtrueå°±å¯ä»¥å®ç°
         </init-param>
         <load-on-startup>1</load-on-startup>
