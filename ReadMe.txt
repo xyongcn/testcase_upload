@@ -1,5 +1,5 @@
-使用JSP实现文件上传功能
-1.安装与配置JDK.txt
-2.安装与配置Tomcat.txt
-3.JSP文件上传.txt
-4.配置tomcat目录浏览功能.txt
+锘夸娇鐢↗SP瀹炵幇鏂囦欢涓婁紶鍔熻兘
+1.瀹夎涓庨厤缃甁DK.txt
+2.瀹夎涓庨厤缃甌omcat.txt
+3.JSP鏂囦欢涓婁紶.txt
+4.閰嶇疆tomcat鐩綍娴忚鍔熻兘.txt
