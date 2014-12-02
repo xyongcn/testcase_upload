@@ -1,4 +1,4 @@
-ExcuteTestScript.jsp
+﻿ExcuteTestScript.jsp
 会根据不同的testcase执行不同的测试脚本。
 其中testcase2是用于指令频度统计统计的的脚本。
 
@@ -8,18 +8,4 @@ response.sendRedirect("http://124.16.141.184:8080/mym_test/"+dirname);
 返回的结果会根据用户上传的测试用例的文件名形成对应的URL
 
 
-tomcat显示目录列表的功能。
-apache-tomcat-7.0.56/conf/web.xml文件中
 
-    <servlet>
-        <servlet-name>default</servlet-name>
-        <servlet-class>org.apache.catalina.servlets.DefaultServlet</servlet-class>
-        <init-param>
-            <param-name>debug</param-name>
-            <param-value>0</param-value>
-        </init-param>
-        <init-param>
-            <param-name>listings</param-name>
-            <param-value>true</param-value>  #这里默认是false，改为true就可以实现
-        </init-param>
-        <load-on-startup>1</load-on-startup>

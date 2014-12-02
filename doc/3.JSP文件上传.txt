@@ -1,7 +1,9 @@
-﻿#1.	配置文件上传目录
+﻿1.配置文件上传目录
 定义文件上传后存储在服务上的位置。可以将路径写在程序当中，或者可以在web.xml配置文件中通过设置 context-param元素来设置文件存储的目录，如下所示：
 
-	/usr/local/apache-tomcat-7.0.53/conf/web.xml
+修改 /usr/local/apache-tomcat-7.0.53/conf/web.xml
+添加如下内容
+
 	<web-app>
 	....
 	<context-param> 
@@ -21,8 +23,9 @@
 
 备注：此目录是测试用例的总目录，用户在页面上传的测试用例均保存在此目录的子文件夹中（具体是哪个子文件夹由用户通过页面选择决定）。如果此目录不存在，则在用户上传文件时自动创建该目录。
 
-#2.	创建上传文件表单
-程序见附件UploadPage.jsp
+2.上传文件表单页面
+
+程序 UploadPage.jsp
 程序放置位置：/usr/local/apache-tomcat-7.0.53/webapps/ROOT/UpLoadPage.jsp
 备注：
 1)	此文件主要搭建了文件上传功能的访问页面
@@ -31,15 +34,19 @@
 2)	用户可分别通过【version】、【platform】和【testcase directory】三个下拉列表选择版本、平台和测试用例目录。选择完成后单击【Change】按钮进行确认。
 3)	用户可通过【Browse】按钮选择本地需要上传的文件，然后单击【Upload File】按钮进行上传。
 
-#3.	创建参数配置处理脚本
-程序见附件ChangeParameter.jsp
+
+
+3.	创建参数配置处理脚本
+
+程序ChangeParameter.jsp
 程序放置位置：/usr/local/apache-tomcat-7.0.53/webapps/ROOT/ChangeParameter.jsp
 备注：
 1)	此脚本用于保存用户在下拉列表中的选择。至于为何需要增加一个按钮用于确定参数，而不是在上传文件（单击【Upload File】按钮）时统一保存，可参考【20140617-普通字符与文件编码方式冲突问题的分析与解决.doc】
 2)	此脚本在用户于页面点击【Change】按钮后自动触发，不需要用户再进行额外的操作。
 3)	步骤1中web.xml所配置的文件上传目录如果不存在将于此脚本中创建。考虑到用户可能在选择测试用例目录后有更改的可能，所以其选择的测试用例目录若不存在暂不在此脚本中创建。
 
-#4.	创建上传文件脚本
+
+4.	创建上传文件脚本
 1)
 下载程序包
 UploadFile.jsp依赖 FileUpload，需要最新的 commons-fileupload.x.x.jar 包文件。下载地址为：http://commons.apache.org/fileupload/。
@@ -58,7 +65,7 @@ cp commons-io-2.4/commons-io-2.4.jar commons-fileupload-1.3.1-bin/lib/commons-fi
 备注：此脚本用于用户上传文件。若用户在页面中选择的测试用例目录不存在，于此脚本中创建。
 
 
-#5.	创建程序执行脚本
+5.	创建程序执行脚本
 程序见附件ExcuteTestScript.jsp，ImportSymbolTable.jsp
 程序放置位置：/usr/local/apache-tomcat-7.0.53/webapps/ROOT/ExcuteTestScript.jsp，/usr/local/apache-tomcat-7.0.53/webapps/ROOT/ImportSymbolTable.jsp
 备注：
