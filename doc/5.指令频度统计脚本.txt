@@ -1,0 +1,3 @@
+指令频度统计的脚本remote.sh要拷贝到
+/home/myming/
+目录下面
