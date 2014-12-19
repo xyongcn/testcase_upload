@@ -25,7 +25,7 @@
 		}else if (testcase.indexOf("testcase2")!=-1){
 			String dirname = filename.substring(0,filename.indexOf(".tar.gz"));
 			runfile = "/home/myming/remote.sh";
-			response.sendRedirect("http://124.16.141.184:8080/mym_test/"+dirname);
+			response.sendRedirect("http://124.16.141.184:8080/mym_test/"+dirname+"/index_page.html");
 		}else if (testcase.indexOf("testcase3") != -1){
 			runfile = "/home/jdi/JSPUploadFile/ExcuteFile/helloworld.sh";
 //			location.href=
