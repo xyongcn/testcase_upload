@@ -68,6 +68,15 @@ cp commons-io-2.4/commons-io-2.4.jar commons-fileupload-1.3.1-bin/lib/commons-fi
 5.	创建程序执行脚本
 程序见附件ExcuteTestScript.jsp，ImportSymbolTable.jsp
 程序放置位置：/usr/local/apache-tomcat-7.0.53/webapps/ROOT/ExcuteTestScript.jsp，/usr/local/apache-tomcat-7.0.53/webapps/ROOT/ImportSymbolTable.jsp
+需要修改中的ip地址为实际机器的ip地址
+ runfile = "/usr/local/apache-tomcat-7.0.57/webapps/ROOT/remote.sh";
+                        response.sendRedirect("http://124.16.141.184:8080/mym_test/"+dirname+"/index_page.html");
+中的remote.sh文件所在的tomcat的路径为实际具体的路径，ip地址为实际机器的ip地址
+还需要修改remote.sh文件中
+ssh  root@192.168.1.148 "DISPLAY=:0 nohup /mnt/freenas-intel/qemu-instru-tracer/deploy_help_doc/all_work_flow/prog/hook.sh"
+的ip地址为指令频度统计的机器的ip地址, "/xxxxx/qemu-instru-tracer/deploy_help_doc/all_work_flow/prog/hook.sh"的路径为具体的路径   
+
+
 备注：
 (1)	ExcuteTestScript.jsp脚本用于在上传文件页面执行程序。
 (2)	提供了两种程序执行方法：①指定程序设计语言（如sh或ruby）②直接命令行运行。可通过修改cmd变量指定程序执行方法。
